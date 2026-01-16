@@ -1,41 +1,44 @@
 {
-    "name": "feature-flag-sdk",
-    "version": "1.0.0",
-    "description": "JavaScript SDK for Feature Flag Management Service",
-    "main": "src/index.js",
-    "scripts": {
-      "test": "node test.js",
-      "test:watch": "nodemon test.js",
-      "test:jest": "jest"
-    },
-    "keywords": [
-      "feature-flags",
-      "sdk",
-      "javascript",
-      "toggles",
-      "experimentation",
-      "client"
-    ],
-    "author": "Jessica Bhagtani",
-    "license": "MIT",
-    "engines": {
-      "node": ">=14.0.0"
-    },
-    "dependencies": {},
-    "devDependencies": {
-      "nodemon": "^3.0.1"
-    },
-    "files": [
-      "src/",
-      "README.md",
-      "package.json"
-    ],
-    "repository": {
-      "type": "git",
-      "url": "your-repo-url"
-    },
-    "bugs": {
-      "url": "your-repo-url/issues"
-    },
-    "homepage": "your-repo-url#readme"
+  "name": "@yourcompany/feature-flag-sdk",
+  "version": "1.0.0",
+  "description": "Feature flag SDK client with caching and background refresh capabilities",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "feature-flags",
+    "feature-toggles",
+    "sdk",
+    "client",
+    "cache"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourcompany/feature-flag-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourcompany/feature-flag-sdk/issues"
+  },
+  "homepage": "https://github.com/yourcompany/feature-flag-sdk#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "src/index.js",
+    "src/CacheManager.js",
+    "src/FeatureFlagClient.js",
+    "src/index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0"
   }
+}
