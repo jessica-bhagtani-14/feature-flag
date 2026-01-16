@@ -5,7 +5,8 @@ const analyticsController = require('../controllers/analyticsController');
 const { authenticateAdmin } = require('../middleware/auth');
 const { managementLimiter, analyticsLimiter } = require('../middleware/rateLimiter');
 const { 
-  validateFlagId, 
+  validateFlagId,
+
   validateTimeRange, 
   validateUserId,
   validateAnalyticsExport,
@@ -94,21 +95,6 @@ router.get('/export',
 
 // ===== LEGACY ENDPOINTS (for backward compatibility) =====
 
-// Legacy dashboard endpoints
-router.get('/app', 
-  validateTimeRange, 
-  analyticsController.getAppLevelAnalytics
-);
-
-router.get('/app/flags', 
-  validateTimeRange, 
-  analyticsController.getAppLevelAnalytics
-);
-
-router.get('/app/performance', 
-  validateTimeRange, 
-  analyticsController.getPerformanceMetrics
-);
 
 // Legacy flag-specific analytics endpoints
 router.get('/flags/:id', 
@@ -122,26 +108,6 @@ router.get('/flags/:id/stats',
   validateTimeRange, 
   analyticsController.getFlagStats
 );
-
-router.get('/flags/:id/trends', 
-  validateFlagId, 
-  validateTimeRange, 
-  analyticsController.getFlagTrends
-);
-
-// Legacy chart endpoint - redirect to new timeseries
-router.get('/flags/:id/chart', 
-  validateFlagId, 
-  validateChartParams, 
-  (req, res, next) => {
-    // Transform old chart params to new timeseries format
-    req.query.flagId = req.params.id;
-    req.query.granularity = req.query.period || 'hour';
-    analyticsController.getEvaluationTimeSeries(req, res);
-  }
-);
-
-
 
 // ===== ADMIN-ONLY ENDPOINTS =====
 
