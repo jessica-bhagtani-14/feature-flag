@@ -170,11 +170,10 @@ class CacheManager {
    * @returns {Object} - Cache stats
    */
   getStats() {
-    const now = Date.now();
     let validEntries = 0;
     let expiredEntries = 0;
     
-    for (const [key, entry] of this.cache.entries()) {
+    for (const [, entry] of this.cache.entries()) {
       if (this.isValidEntry(entry)) {
         validEntries++;
       } else {

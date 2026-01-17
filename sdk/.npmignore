@@ -1,0 +1,14 @@
+# .npmignore
+node_modules/
+tests/
+examples/
+.git/
+.github/
+*.test.js
+.eslintrc.js
+jest.config.js
+coverage/
+.env
+.DS_Store
+eslint.config.mjs
+test.js

@@ -1,13 +1,20 @@
 {
-  "name": "@yourcompany/feature-flag-sdk",
+  "name": "@jessica-bhagtani-14/feature-flag-sdk",
   "version": "1.0.0",
-  "description": "Feature flag SDK client with caching and background refresh capabilities",
+  "description": "Feature flag SDK client",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
     "prepublishOnly": "npm test"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
   "keywords": [
     "feature-flags",
@@ -16,16 +23,16 @@
     "client",
     "cache"
   ],
-  "author": "Your Name",
+  "author": "Jessica Bhagtani",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourcompany/feature-flag-sdk.git"
+    "url": "https://github.com/jessica-bhagtani-14/feature-flag/tree/main/sdk"
   },
   "bugs": {
-    "url": "https://github.com/yourcompany/feature-flag-sdk/issues"
+    "url": "https://github.com/jessica-bhagtani-14/feature-flag/issues"
   },
-  "homepage": "https://github.com/yourcompany/feature-flag-sdk#readme",
+  "homepage": "https://github.com/jessica-bhagtani-14/feature-flag/blob/main/sdk/README.md",
   "engines": {
     "node": ">=14.0.0"
   },
@@ -38,7 +45,9 @@
     "LICENSE"
   ],
   "devDependencies": {
-    "eslint": "^8.0.0",
+    "@eslint/js": "^9.39.2",
+    "eslint": "^8.57.1",
+    "globals": "^17.0.0",
     "jest": "^29.0.0"
   }
 }
