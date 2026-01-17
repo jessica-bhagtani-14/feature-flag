@@ -509,41 +509,6 @@ class AnalyticsController {
   }
 
   /**
-   * Get flag trends (legacy - deprecated)
-   * GET /api/analytics/flags/:flagId/trends
-   */
-  async getFlagTrends(req, res) {
-    try {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ 
-          success: false,
-          errors: errors.array()
-        });
-      }
-
-      const flagId = req.params.id;
-      const { timeRange = '7d' } = req.query;
-
-      // This method is deprecated in the service
-      const trends = await analyticsService.getFlagTrends(parseInt(flagId), timeRange);
-      
-      res.json({
-        success: true,
-        data: trends,
-        deprecated: true,
-        message: 'This endpoint is deprecated. Use /api/analytics/timeseries instead.'
-      });
-    } catch (error) {
-      console.error('Get flag trends error:', error);
-      res.status(500).json({
-        success: false,
-        error: error.message
-      });
-    }
-  }
-
-  /**
    * Convert analytics data to CSV format
    * @param {Object} data - Analytics data to convert
    * @returns {string} CSV string
