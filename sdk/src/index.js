@@ -1,14 +1,12 @@
-// SDK entry point
-const FeatureFlagClient = require('./FeatureFlagClient');
-const CacheManager = require('./CacheManager');
+// sdk/src/index.js
+import * as FeatureFlagClientNS from './FeatureFlagClient.js';
+import * as CacheManagerNS from './CacheManager.js';
 
-module.exports = {
-  FeatureFlagClient,
-  CacheManager,
-  // Export as default for convenience
-  default: FeatureFlagClient
-};
+const FeatureFlagClient =
+  FeatureFlagClientNS.default ?? FeatureFlagClientNS;
 
-// Also allow direct import
-module.exports.FeatureFlagClient = FeatureFlagClient;
-module.exports.CacheManager = CacheManager;
+const CacheManager =
+  CacheManagerNS.default ?? CacheManagerNS;
+
+export { FeatureFlagClient, CacheManager };
+export default FeatureFlagClient;
