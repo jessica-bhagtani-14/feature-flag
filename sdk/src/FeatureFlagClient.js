@@ -1,6 +1,6 @@
-const CacheManager = require('./CacheManager');
+import CacheManager from './CacheManager.js';
 
-class FeatureFlagClient {
+export default class FeatureFlagClient {
   constructor(config) {
     if (!config) {
       throw new Error('Configuration is required');
@@ -372,5 +372,3 @@ class FeatureFlagClient {
     console.log('FeatureFlagClient destroyed');
   }
 }
-
-module.exports = FeatureFlagClient;

@@ -1,5 +1,5 @@
-const { FeatureFlagClient, CacheManager } = require('./src/index');
-
+import CacheManager from './src/CacheManager.js';
+import FeatureFlagClient from './src/FeatureFlagClient.js';
 // Color output helpers
 const colors = {
   green: '\x1b[32m',
