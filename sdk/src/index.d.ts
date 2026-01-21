@@ -1,4 +1,4 @@
-declare module '@yourcompany/feature-flag-sdk' {
+declare module '@jessica_bhagtani/feature-flag' {
   export interface CacheConfig {
     ttl?: number;
     maxSize?: number;

@@ -1,5 +1,5 @@
 {
-  "name": "@jessica-bhagtani-14/feature-flag-sdk",
+  "name": "@jessica_bhagtani/feature-flag",
   "version": "1.0.0",
   "description": "Feature flag SDK client",
   "main": "src/index.js",
@@ -9,7 +9,7 @@
     ".": "./src/index.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "node test.js",
     "lint": "eslint .",
     "prepublishOnly": "npm test"
   },
